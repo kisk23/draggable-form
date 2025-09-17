@@ -17,12 +17,7 @@ export default function FormBuilder() {
     <DndContext onDragEnd={handleDrop}>
       <div className="grid grid-cols-3 gap-4 p-4">
       
-        <div>
-          <h2 className="font-bold mb-2">Form Fields</h2>
-          <DraggableField id="text" label="Text Input" />
-          <DraggableField id="checkbox" label="Checkbox" />
-          <DraggableField id="select" label="Dropdown" />
-        </div>
+      
 
     
         <div className="col-span-2">
