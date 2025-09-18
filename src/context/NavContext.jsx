@@ -4,19 +4,17 @@ import React, { createContext, useContext, useState } from 'react';
 const NavContext = createContext();
 
 export function NavProvider({ children }) {
-  const [showLabels, setShowLabels] = useState(false);
-  const [showInputs, setShowInputs] = useState(false);
-  const [showButtons, setShowButtons] = useState(false);
+  const [showElements, setShowElements] = useState("");
+
+  const [formElements, setFormElements] = useState([]);
 
   return (
     <NavContext.Provider
       value={{
-        showLabels,
-        setShowLabels,
-        showInputs,
-        setShowInputs,
-        showButtons,
-        setShowButtons,
+        showElements,
+        setShowElements,
+        formElements,   
+        setFormElements,
       }}
     >
       {children}
@@ -27,3 +25,5 @@ export function NavProvider({ children }) {
 export function useNav() {
   return useContext(NavContext);
 }
+export function useFormElements() {
+return  useContext(NavContext);}

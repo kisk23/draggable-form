@@ -3,7 +3,7 @@ import { useDraggable } from "@dnd-kit/core";
 import {CSS} from '@dnd-kit/utilities';
 
 
-export default function DraggableField({ id, label }) {
+export default function DraggableField({ id, label ,children}) {
   const { attributes, listeners, setNodeRef,transform } = useDraggable({ id });
    const style = {
     transform: CSS.Translate.toString(transform),
@@ -14,10 +14,10 @@ export default function DraggableField({ id, label }) {
       ref={setNodeRef}
       {...listeners}
       {...attributes}
-      className="p-2 m-1 bg-blue-200 rounded cursor-pointer "
+      className="p-2 m-1 rounded cursor-pointer "
       style={style}
     >
-      {label}
+      {children}
     </div>
   );
 }

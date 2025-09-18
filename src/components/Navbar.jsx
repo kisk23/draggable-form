@@ -3,38 +3,29 @@ import styled from 'styled-components';
 import { useNav } from '../context/NavContext';
 
 export default function NavBar() {
-  const {
-    showLabels,
-    setShowLabels,
-    showInputs,
-    setShowInputs,
-    showButtons,
-    setShowButtons,
-  } = useNav();
+const {
+  showElements,
+  setShowElements,
+} = useNav();
 
-  
-  const togglePanel = (panel) => {
-    setShowLabels(panel === 'labels' ? !showLabels : false);
-    setShowInputs(panel === 'inputs' ? !showInputs : false);
-    setShowButtons(panel === 'buttons' ? !showButtons : false);
-  };
+console.log(showElements);
+
 
   return (
     <Bar>
       <NavGroup>
-        <Label onClick={() => togglePanel('labels')}>
+        <Label onClick={() =>setShowElements('labels')}>
           Labels
-          {showLabels && <Panel>Label tools go here</Panel>}
         </Label>
 
-        <Label onClick={() => togglePanel('inputs')}>
+        <Label onClick={() =>setShowElements('inputs')}>
           Input
-          {showInputs && <Panel>Input field tools go here</Panel>}
+         
         </Label>
 
-        <Label onClick={() => togglePanel('buttons')}>
+        <Label onClick={() =>setShowElements('buttons')}>
           Buttons
-          {showButtons && <Panel>Button tools go here</Panel>}
+         
         </Label>
       </NavGroup>
 
