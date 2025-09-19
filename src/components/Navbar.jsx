@@ -8,7 +8,7 @@ const {
   setShowElements,
 } = useNav();
 
-console.log(showElements);
+
 
 
   return (

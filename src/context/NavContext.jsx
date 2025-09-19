@@ -7,6 +7,11 @@ export function NavProvider({ children }) {
   const [showElements, setShowElements] = useState("");
 
   const [formElements, setFormElements] = useState([]);
+    const [sections, setSections] = useState({
+    "section-1": [],
+    "section-2": [],
+    "section-3": [],
+  });
 
   return (
     <NavContext.Provider
@@ -15,6 +20,8 @@ export function NavProvider({ children }) {
         setShowElements,
         formElements,   
         setFormElements,
+        sections,
+        setSections
       }}
     >
       {children}
@@ -26,4 +33,8 @@ export function useNav() {
   return useContext(NavContext);
 }
 export function useFormElements() {
+return  useContext(NavContext);}
+
+
+export function useSections() {
 return  useContext(NavContext);}
